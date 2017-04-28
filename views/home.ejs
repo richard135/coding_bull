@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hello</title>
+</head>
+<body>
+  <p>Hello World! </p>
+  <form action="/success" method ="POST">
+    Words: <input type="text" name="name"><br>
+    <input type="submit" value="Submit">
+  </form>
+  <% inputInfo.forEach((input)=> {%>
+    <p><%= input.name%></p>
+  <%}) %>
+</body>
+</html>
