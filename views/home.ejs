@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hello</title>
+  <title>Interview</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -14,19 +14,46 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../styles/application.css"/>
+  <link href="/styles/application.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <p>Hello World! </p>
-  <form action="/success" method ="POST">
-    Title: <input type="text" name="title"><br>
-  <form action="/success" method ="POST">
-    Description: <input type="text" name="description"><br>
-    <input type="submit" value="Submit">
-  </form>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand">Technical Interview</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <form action="/success" method ="POST">
+      Title: <input type="text" name="title" class="form-control"><br>
+    <form action="/success" method ="POST">
+      Description: <textarea type="text" name="description" class="form-control" rows="5"></textarea><br>
+      <input type="submit" value="Submit" class="btn">
+    </form>
+  </div>
   <% inputInfo.forEach((input)=> {%>
-    <div className="cust"><%= input.title%></div>
-    <p><%= input.description%></p>
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+        </div><!-- /col-sm-12 -->
+      </div><!-- /row -->
+        <div class="row">
+        <div class="col-sm-1">
+      </div><!-- /thumbnail -->
+    </div><!-- /col-sm-1 -->
+
+    <div class="col">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong><%= input.title%></strong>
+        </div>
+        <div class="panel-body">
+          <p><%= input.description%></p>
+        </div><!-- /panel-body -->
+      </div><!-- /panel panel-default -->
+    </div><!-- /col-sm-5 -->
+  </div><!-- /container -->
   <%}) %>
 </body>
 </html>
