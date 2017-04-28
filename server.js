@@ -19,17 +19,13 @@ app.get("/", (req, res) => {
 });
 
 app.post("/success", (req, res) => {
-  if (req.body.title === ""|| req.body.description === ""){
-    res.status(200).render('home', {inputInfo});
-  } else {
-    knex('input').insert(req.body)
-    .then(inputInfo => {
-      res.status(200).render('success');
-      // res.json(req.body);
-    }).catch(err => {
-      console.error("Knex error on insert:", err);
-    })
-  }
+  knex('input').insert(req.body)
+  .then(inputInfo => {
+    res.status(200).render('success');
+    // res.json(req.body);
+  }).catch(err => {
+    console.error("Knex error on insert:", err);
+  })
 });
 
 app.listen(PORT, () => {
