@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  knex.select().table("input")
+  knex.select().table("input").orderBy('created_at', 'desc')
   .then(inputInfo => {
     res.status(200).render('home', {inputInfo});
   })
